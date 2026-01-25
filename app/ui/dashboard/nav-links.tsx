@@ -5,8 +5,8 @@ import {
   HiIdentification,
   HiDatabase,
   HiCollection,
-  HiDeviceMobile,
 } from 'react-icons/hi';
+import { ImPhone } from 'react-icons/im';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
@@ -22,7 +22,7 @@ const links = [
   },
   { name: 'Skills', href: '/dashboard/skills', icon: HiDatabase },
   { name: 'Projetos', href: '/dashboard/projects', icon: HiCollection },
-  { name: 'Contato', href: '/dashboard/contact', icon: HiDeviceMobile },
+  { name: 'Contato', href: '/dashboard/contact', icon: ImPhone },
 ];
 
 export default function NavLinks() {
@@ -35,7 +35,7 @@ export default function NavLinks() {
           <Link
             key={link.name}
             href={link.href}
-            className={clsx("flex h-[48px] grow items-center justify-center gap-2  text-blue-400 p-3 text-sm font-medium hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
+            className={clsx("flex h-[48px] grow items-center justify-center gap-2  text-blue-300 p-3 text-sm font-medium hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
               {
                 ' text-blue-600': pathname === link.href,
               }
