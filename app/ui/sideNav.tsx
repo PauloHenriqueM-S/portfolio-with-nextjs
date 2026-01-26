@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import NavLinks from '@/app/ui/dashboard/nav-links';
+import NavLinks from '@/app/ui/nav-links';
 import Image from 'next/image';
-import SocialLinks from './social-links';
-import HomeButton from './home-button';
-import DarkLight from './dark-light';
+import SocialLinks from '@/app/ui/social-links';
+import HomeButton from '@/app/ui/home-button';
+import DarkLight from '@/app/ui/dark-light';
 
 export default function NavBar() {
   return (
