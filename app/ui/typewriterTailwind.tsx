@@ -2,8 +2,13 @@
 
 import { useEffect, useState } from 'react';
 
-export function TypewriterTailwind(){
+interface TypewriterTailwindProps {
+  onComplete: () => void;
+}
+
+export function TypewriterTailwind({ onComplete }: TypewriterTailwindProps) {
   const [text, setText] = useState('');
+  const [isComplete, setIsComplete] = useState(false);
   const fullText = 'Paulo Henrique, Desenvolvedor front-end!';
 
   useEffect(() => {
@@ -14,17 +19,22 @@ export function TypewriterTailwind(){
         i++;
       } else {
         clearInterval(typingEffect)
+        setIsComplete(true);
+        if (onComplete) onComplete();
       }
     }, 100);
 
     return () => clearInterval(typingEffect);
-  }, []);
+  }, [onComplete]);
 
   return (
-    <div className='relative'>
-      <span className='text-3xl font-bold'>{text}</span>
-      <span className='absolute right-0 top-0 w-1 h-full bg-gray-800 animate-[blink_1s_infinite]'></span>
-
-    </div>
+      <div className='relative flex items-center flex-wrap'>
+        <span className='text-2xl sm:text-3xl md:text-4xl font-bold'>
+          {text}
+          {!isComplete && (
+          <span className='inline-block w-1 h-6 sm:h-8 bg-gray-800 animate-[blink_1s_infinite] ml-1 mt-1'></span>
+          )}
+        </span>
+      </div>
   )
 }
