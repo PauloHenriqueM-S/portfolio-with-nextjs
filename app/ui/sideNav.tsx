@@ -39,7 +39,7 @@ export default function NavBar() {
     </button>
       )}
 
-    <aside className={`hidden md:flex flex-col px-4 py-6 bg-white dark:bg-gray-900 w-64 h-screen sticky top-0 border-r border-gray-200 dark:border-gray-800 overflow-y-auto`}>
+    <aside className={`hidden md:flex flex-col px-4 py-6 bg-gradient-to-tr from-blue-600 to-blue-950 dark:from-blue-950 dark:to-blue-600 w-64 h-screen sticky top-0 border-r border-gray-200 dark:border-gray-800 overflow-y-auto`}>
       <div className='flex flex-col h-full'>
         <div className='flex justify-between items-center mb-6'>
           <div className='flex items-center gap-3'>
@@ -74,7 +74,7 @@ export default function NavBar() {
     {isOpen && (
       <div className='md:hidden'>
         <div className='fixed inset-0 bg-black/50 z-40 backdrop-blur-sm' onClick={() => setIsOpen(false)} aria-hidden='true'>
-          <aside className={`fixed inset-y-0 left-0 z-50 flex flex-col px-4 py-6 w-72 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 shadow-xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+          <aside className={`fixed inset-y-0 left-0 z-50 flex flex-col px-4 py-6 w-72 bg-gradient-to-tr from-blue-600 to-blue-950 dark:from-blue-950 dark:to-blue-600 border-r border-blue-200 dark:border-blue-800 shadow-xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
             <div className='flex items-center justify-between mb-8'>
               <div className='flex items-center gap-3'>
                 <HomeButton />
@@ -82,7 +82,7 @@ export default function NavBar() {
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className='p-2 rounded-lg text-gray600 dark:text-gray-400 hover:gb-gray-100 dark:hover:bg-gray-800'
+                className='p-2 rounded-lg text-blue-600 dark:text-blue-950 hover:gb-gray-100 dark:hover:bg-gray-800'
                 aria-label='Fechar menu'
               >
                 <HiX className='w-5 h-5' />
