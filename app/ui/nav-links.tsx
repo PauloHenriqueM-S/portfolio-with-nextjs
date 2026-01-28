@@ -11,38 +11,46 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
-// Map of links to display in the side navigation.
-// Depending on the size of the application, this would be stored in a database.
 const links = [
   { name: 'Inicio', href: '/dashboard', icon: HiHome },
-  {
-    name: 'Sobre mim',
-    href: '/dashboard/about',
-    icon: HiIdentification,
-  },
+  { name: 'Sobre mim', href: '/dashboard/about', icon: HiIdentification },
   { name: 'Skills', href: '/dashboard/skills', icon: HiDatabase },
   { name: 'Projetos', href: '/dashboard/projects', icon: HiCollection },
   { name: 'Contato', href: '/dashboard/contact', icon: ImPhone },
 ];
 
-export default function NavLinks() {
+interface NavLinksProps {
+  onItemClick?: () => void;
+}
+
+export default function NavLinks({ onItemClick }: NavLinksProps) {
   const pathname = usePathname();
+  
   return (
     <>
       {links.map((link) => {
         const LinkIcon = link.icon;
+        const isActive = pathname === link.href;
+
         return (
           <Link
             key={link.name}
             href={link.href}
-            className={clsx("flex h-[48px] grow items-center justify-center gap-2  text-blue-300 p-3 text-sm font-medium hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
+            onClick={onItemClick}
+            className={clsx(
+              "flex items-center gap-3 px-4 py-3 text-sm font-medium",
+              "rounded-lg transition-all duration-300",
+              "hover:bg-blue-50 dark:hover:bg-blue-900/30",
+              "w-full",
               {
-                ' text-blue-600': pathname === link.href,
+                "bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300": isActive,
+                "text-blue-500 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200": !isActive,
               }
             )}
+            aria-current={isActive ? 'page' : undefined}
           >
-            <LinkIcon className="w-6" />
-            <p className="hidden md:block">{link.name}</p>
+            <LinkIcon className="w-6 h-6 shrink-0" />
+            <p className="truncate">{link.name}</p>
           </Link>
         );
       })}
