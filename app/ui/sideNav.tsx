@@ -40,7 +40,7 @@ export default function NavBar() {
     </button>
       )}
 
-    <aside className={`hidden md:flex flex-col px-4 py-6 bg-gradient-to-tr from-blue-600 to-indigo-950 dark:from-indigo-950 dark:to-blue-600 w-64 h-screen sticky top-0 border-r border-gray-200 dark:border-gray-800 overflow-y-auto`}>
+    <aside className={`hidden md:flex flex-col px-4 py-6 bg-gradient-to-tr from-blue-600 to-indigo-950 dark:from-indigo-950 dark:to-blue-600 w-64 h-screen sticky top-0 border-none overflow-y-auto`}>
       <div className='flex flex-col h-full'>
         <div className='flex justify-between items-center mb-6'>
           <div className='flex items-center gap-3'>
