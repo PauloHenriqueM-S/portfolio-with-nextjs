@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import NavLinks from '@/app/ui/nav-links';
 import SocialLinks from '@/app/ui/social-links';
@@ -39,7 +40,7 @@ export default function NavBar() {
     </button>
       )}
 
-    <aside className={`hidden md:flex flex-col px-4 py-6 bg-gradient-to-tr from-blue-600 to-blue-950 dark:from-blue-950 dark:to-blue-600 w-64 h-screen sticky top-0 border-r border-gray-200 dark:border-gray-800 overflow-y-auto`}>
+    <aside className={`hidden md:flex flex-col px-4 py-6 bg-gradient-to-tr from-blue-600 to-indigo-950 dark:from-indigo-950 dark:to-blue-600 w-64 h-screen sticky top-0 border-r border-gray-200 dark:border-gray-800 overflow-y-auto`}>
       <div className='flex flex-col h-full'>
         <div className='flex justify-between items-center mb-6'>
           <div className='flex items-center gap-3'>
@@ -49,21 +50,20 @@ export default function NavBar() {
         </div>
       
         <Link className='mb-8 flex flex-col items-center' href="/" aria-label='Página inicial'>
-          <div className='w-16 h-16 rounded-full bg-blue-600 dark:bg-blue-800 flex items-center justify-center mb-2'>
-            <span className="font-bold text-2xl text-white">PH</span>
-          </div>
-            <span className='text-sm text-gray-600 dark:text-gray-400'>Portifolio</span>
+          {/* <div className='w-25 h-25 rounded-full border border-indigo-800 bg-blue-600 dark:bg-blue-800 flex items-center justify-center mb-2'></div> */}
+            <Image src="/profile1.jpeg" alt="profile picture" width={100} height={100} className='rounded-full w-28 h-30' />
+            <span className='text-sm text-blue-500 dark:text-blue-400'>Paulo Henrique</span>
         </Link>
       
           <nav className='flex-1 mb-6'>
             <NavLinks />
           </nav>
 
-          <div className='pt-6 border-t border-gray-200 dark:border-gray-800'>
-            <p className='text-sm font-medium text-gray-700 dark:text-gray-300 mb-3'>
+          <div className='flex flex-col justify-center items-center pt-6 border-t border-blue-600 dark:border-blue-800 '>
+            <p className='text-sm font-medium text-blue-200 dark:text-blue-400 mb-3'>
               Conecte-se comigo!
             </p>
-            <div className='flex justify-start gap-4'>
+            <div className='flex gap-4'>
               <SocialLinks />
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function NavBar() {
     {isOpen && (
       <div className='md:hidden'>
         <div className='fixed inset-0 bg-black/50 z-40 backdrop-blur-sm' onClick={() => setIsOpen(false)} aria-hidden='true'>
-          <aside className={`fixed inset-y-0 left-0 z-50 flex flex-col px-4 py-6 w-72 bg-gradient-to-tr from-blue-600 to-blue-950 dark:from-blue-950 dark:to-blue-600 border-r border-blue-200 dark:border-blue-800 shadow-xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+          <aside className={`fixed inset-y-0 left-0 z-50 flex flex-col px-4 py-6 w-72 bg-gradient-to-tr from-blue-600 to-indigo-950 dark:from-indigo-950 dark:to-blue-600 border-r border-blue-200 dark:border-blue-800 shadow-xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
             <div className='flex items-center justify-between mb-8'>
               <div className='flex items-center gap-3'>
                 <HomeButton />
@@ -91,17 +91,17 @@ export default function NavBar() {
 
             <Link href='/' onClick={() => setIsOpen(false)} className='mb-8 flex flex-col items-center' aria-label='Página inicial' >
               <div className='w-16 h-16 rounded-full bg-blue-600 dark:bg-blue-800 flex items-center justify-center mb-2'>
-                <span className='text-2xl font-bold text-white'>PH</span>
+                <Image src="/profile1.jpeg" alt="profile picture" width={100} height={100} className='rounded-full' />
               </div>
-              <span className='text-sm text-gray-600 dark:text-gray-400'>Portfolio</span>
+              <span className='text-sm text-blue-500 dark:text-blue-400'>Paulo Henrique</span>
             </Link>
 
             <nav className='flex-1 mb-6 overflow-y-auto'>
               <NavLinks onItemClick={() => setIsOpen(false)} />
             </nav>
 
-            <div className='pt-6 border-t border-gray-200 dark:border-gray-800'>
-              <p className='text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 text-center' >Conecte-se comigo!</p>
+            <div className='pt-6 border-t border-blue-600 dark:border-blue-800'>
+              <p className='text-sm font-medium text-blue-200 dark:text-blue-400 mb-3 text-center' >Conecte-se comigo!</p>
               <div className='flex justify-center gap-4'>
                 <SocialLinks />
               </div>

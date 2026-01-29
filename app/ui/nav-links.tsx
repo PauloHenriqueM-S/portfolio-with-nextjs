@@ -40,11 +40,11 @@ export default function NavLinks({ onItemClick }: NavLinksProps) {
             className={clsx(
               "flex items-center gap-3 px-4 py-3 text-sm font-medium",
               "rounded-lg transition-all duration-300",
-              "hover:bg-blue-50 dark:hover:bg-blue-900/30",
+              "hover:bg-blue-50 dark:hover:bg-indigo-950/30",
               "w-full",
               {
-                "bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300": isActive,
-                "text-blue-500 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200": !isActive,
+                "bg-blue-50 dark:bg-indigo-900/50 text-indigo-600 dark:text-blue-300": isActive,
+                "text-indigo-400 dark:text-blue-300 hover:text-indigo-700 dark:hover:text-blue-200": !isActive,
               }
             )}
             aria-current={isActive ? 'page' : undefined}

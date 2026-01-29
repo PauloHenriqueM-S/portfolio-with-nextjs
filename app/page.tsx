@@ -13,7 +13,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col w-screen h-screen items-center justify-center bg-linear-to-tr from-blue-700 to-indigo-900 p-10 gap-10">
+    <div className="flex flex-col w-screen h-screen items-center justify-center bg-linear-to-tr text-blue-200 from-blue-700 to-indigo-900 p-10 gap-10">
         <div className="flex">
           <TypewriterTailwind onComplete={handleComplete} />
         </div>
