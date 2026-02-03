@@ -12,14 +12,14 @@ const links = [
 
 export default function Navigation() {
   return (
-    <div className="flex flex-col items-center gap-4 mb-4 md:mb-0 h-screen">
+    <div className="flex flex-row items-center gap-4 mb-4 md:mb-0 h-full">
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (
           <Link
             key={link.name}
             href={link.href}
-            className="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300 hover:bg-blue-50 dark:hover:bg-indigo-950/30 "
+            className="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300 text-indigo-400 dark:text-blue-300 hover:text-indigo-600 dark:hover:bg-blue-300 hover:bg-indigo-950/30 "
             aria-current="page"
           >
             <LinkIcon className="w-6 h-6 shrink-0" />

@@ -15,9 +15,9 @@ export default function DashboardLayout({
       <main className="flex-1 p-4 md:p-6 lg:p-8 md:overflow-y-auto md:pl-0">
         <div className="mt-16 md:mt-0">
           <div className="md:hidden h-16"></div>
-          <PreviousPage />
+          {/* <PreviousPage /> */}
           {children}
-          <NextPage />
+          {/* <NextPage /> */}
         </div>
       </main>
 
