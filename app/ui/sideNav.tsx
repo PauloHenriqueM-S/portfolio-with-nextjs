@@ -40,32 +40,35 @@ export default function NavBar() {
     </button>
       )}
 
-    <aside className={`hidden md:flex flex-col px-4 py-6 bg-gradient-to-tr from-blue-600 to-indigo-950 dark:from-indigo-950 dark:to-blue-600 w-64 h-screen sticky top-0 border-none overflow-y-auto`}>
-      <div className='flex flex-col h-full'>
-        <div className='flex justify-between items-center mb-6'>
-          <div className='flex items-center gap-3'>
+    <aside className={`hidden md:flex md:flex-row justify-between w-full m-0 p-0 bg-gradient-to-tr from-blue-600 to-indigo-950 dark:from-indigo-950 dark:to-blue-600 `}>
+      <div className='w-full flex flex-row justify-around max-w-7xl m-0 p-0 '>
+        <div className='flex items-center justify-between h-16'>
+          <div className=''>
             <HomeButton />
-            <DarkLight />
           </div>
         </div>
       
-        <Link className='mb-8 flex flex-col items-center' href="/" aria-label='Página inicial'>
-          {/* <div className='w-25 h-25 rounded-full border border-indigo-800 bg-blue-600 dark:bg-blue-800 flex items-center justify-center mb-2'></div> */}
+        {/* <Link className='mb-8 flex flex-row items-center' href="/" aria-label='Página inicial'>
+          <div className='w-25 h-25 rounded-full border border-indigo-800 bg-blue-600 dark:bg-blue-800 flex items-center justify-center mb-2'></div> 
             <Image src="/profile1.jpeg" alt="profile picture" width={100} height={100} className='rounded-full w-28 h-30' />
             <span className='text-sm text-blue-500 dark:text-blue-400'>Paulo Henrique</span>
-        </Link>
+        </Link> */}
       
-          <nav className='flex-1 mb-6'>
+          <nav className='flex'>
             <NavLinks />
           </nav>
 
-          <div className='flex flex-col justify-center items-center pt-6 border-t border-blue-600 dark:border-blue-800 '>
+          {/* <div className='flex flex-row justify-center items-center pt-6 border-t border-blue-600 dark:border-blue-800 '>
             <p className='text-sm font-medium text-blue-200 dark:text-blue-400 mb-3'>
               Conecte-se comigo!
             </p>
             <div className='flex gap-4'>
               <SocialLinks />
             </div>
+          </div> */}
+
+          <div className=''>
+            <DarkLight />
           </div>
         
       </div>
