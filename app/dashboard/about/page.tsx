@@ -1,5 +1,7 @@
+import About from "@/app/ui/dashboard/about/about";
+
 export default function Page(){
   return (
-    <p>About</p>
+    <About />
   )
 }

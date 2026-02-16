@@ -9,11 +9,11 @@ export default function DarkLight() {
   return (
     <button 
       onClick={toggleTheme}
-      className="flex items-center justify-center p-2 rounded-full 
+      className="flex items-center justify-center p-2 rounded-full mt-2
                 transition-all duration-300
-                bg-slate-200 dark:bg-slate-700
-                hover:bg-slate-300 dark:hover:bg-slate-600
-                text-slate-800 dark:text-slate-200
+                bg-blue-300 dark:bg-indigo-700
+                hover:bg-blue-300 dark:hover:bg-indigo-600
+                text-indigo-800 dark:text-blue-200
                 shadow hover:shadow-lg"
       aria-label={`Mudar para ${theme === 'light' ? 'modo escuro' : 'modo claro'}`}
     >
